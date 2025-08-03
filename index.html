@@ -10,51 +10,64 @@
 </head>
 <body>
 
-    <!-- IMPROVED NAVBAR WITH GRADIENT -->
-    <header class="main-header">
-        <nav class="navbar">
-            <div class="container">
-                <a href="#about" class="nav-logo">
-                    <span class="logo-text">Shubham</span>
-                    <span class="logo-accent">Jain</span>
-                </a>
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                    <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link contact-button">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
+<!-- NAVBAR -->
+<header class="main-header">
+    <nav class="navbar">
+        <div class="container">
+            <a href="#about" class="nav-logo">
+                <span class="logo-text">Shubham</span>
+                <span class="logo-accent">Jain</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link contact-button">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 
-    <main>
-        <!-- ENHANCED HERO SECTION -->
-        <section id="about" class="about-section">
-            <div class="background-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-                <div class="floating-elements">
-                    <div class="floating-element">☁️</div>
-                    <div class="floating-element">⚡</div>
-                    <div class="floating-element">🚀</div>
-                </div>
+<main>
+    <!-- FIXED HERO SECTION WITH BETTER PROFILE IMAGE -->
+    <section id="about" class="about-section">
+        <div class="background-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="floating-elements">
+                <div class="floating-element">☁️</div>
+                <div class="floating-element">⚡</div>
+                <div class="floating-element">🚀</div>
             </div>
-            <div class="container">
-                <div class="about-content">
-                    <div class="profile-image-container animate-on-load">
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-section animate-on-load">
+                    <div class="profile-image-container">
                         <div class="profile-image">
                             <div class="profile-ring"></div>
-                            <i class="fas fa-user-tie"></i>
+                            <!-- Replace with your actual image or use the styled icon -->
+                            <div class="profile-avatar">
+                                <!-- Option 1: Use your actual photo -->
+                                <!-- <img src="your-profile-pic.jpg" alt="Shubham Jain" class="profile-pic"> -->
+
+                                <!-- Option 2: Modern styled icon -->
+                                <div class="profile-icon-wrapper">
+                                    <i class="fas fa-user-tie profile-icon"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="text-content">
                     <h1 class="name animate-on-load">
                         <span class="text-reveal">Shubham Jain</span>
                     </h1>
@@ -84,377 +97,364 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- PROJECTS SECTION -->
-        <section id="projects" class="projects-section">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll">
-                    <span class="title-number">01.</span>
-                    Featured Projects
-                </h2>
-                <div class="projects-grid">
-                    <!-- Project 1 -->
-                    <div class="project-card animate-on-scroll">
-                        <div class="project-image-container">
-                            <img src="https://picsum.photos/seed/banking/600/400" alt="Banking API Project" class="project-image">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="#" target="_blank" class="project-link">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                    <a href="https://github.com/jshubham" target="_blank" class="project-link">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title">Banking Payment APIs</h3>
-                            <p class="project-description">RESTful APIs for SEPA and International payments handling millions of transactions daily with high scalability and reliability.</p>
-                            <div class="project-tech">
-                                <span>Java 17</span>
-                                <span>Spring Boot 3</span>
-                                <span>Azure</span>
-                                <span>PostgreSQL</span>
+    <!-- PROJECTS SECTION (title-number removed) -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project cards remain the same -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image-container">
+                        <img src="https://picsum.photos/seed/banking/600/400" alt="Banking API Project" class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/jshubham" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Project 2 -->
-                    <div class="project-card animate-on-scroll">
-                        <div class="project-image-container">
-                            <img src="https://picsum.photos/seed/microservices/600/400" alt="Microservices Project" class="project-image">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="#" target="_blank" class="project-link">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                    <a href="https://github.com/jshubham" target="_blank" class="project-link">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Banking Payment APIs</h3>
+                        <p class="project-description">RESTful APIs for SEPA and International payments handling millions of transactions daily with high scalability and reliability.</p>
+                        <div class="project-tech">
+                            <span>Java 17</span>
+                            <span>Spring Boot 3</span>
+                            <span>Azure</span>
+                            <span>PostgreSQL</span>
                         </div>
-                        <div class="project-info">
-                            <h3 class="project-title">Sourcing Microservices</h3>
-                            <p class="project-description">Created and integrated 20+ microservices using Spring Boot with Kafka & RabbitMQ for asynchronous communication.</p>
-                            <div class="project-tech">
-                                <span>Spring Boot</span>
-                                <span>Kafka</span>
-                                <span>RabbitMQ</span>
-                                <span>Docker</span>
+                    </div>
+                </div>
+
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image-container">
+                        <img src="https://picsum.photos/seed/microservices/600/400" alt="Microservices Project" class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/jshubham" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Sourcing Microservices</h3>
+                        <p class="project-description">Created and integrated 20+ microservices using Spring Boot with Kafka & RabbitMQ for asynchronous communication.</p>
+                        <div class="project-tech">
+                            <span>Spring Boot</span>
+                            <span>Kafka</span>
+                            <span>RabbitMQ</span>
+                            <span>Docker</span>
+                        </div>
+                    </div>
+                </div>
 
-                    <!-- Project 3 -->
-                    <div class="project-card animate-on-scroll">
-                        <div class="project-image-container">
-                            <img src="https://picsum.photos/seed/azure/600/400" alt="Azure Migration Project" class="project-image">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="#" target="_blank" class="project-link">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                    <a href="https://github.com/jshubham" target="_blank" class="project-link">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                </div>
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image-container">
+                        <img src="https://picsum.photos/seed/azure/600/400" alt="Azure Migration Project" class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/jshubham" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="project-info">
-                            <h3 class="project-title">Cloud Migration Platform</h3>
-                            <p class="project-description">Migrated legacy applications from IBM WebSphere to Azure Cloud, achieving 100% reduction in downtime.</p>
-                            <div class="project-tech">
-                                <span>Azure DevOps</span>
-                                <span>Azure App Service</span>
-                                <span>Key Vault</span>
-                                <span>CI/CD</span>
-                            </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Cloud Migration Platform</h3>
+                        <p class="project-description">Migrated legacy applications from IBM WebSphere to Azure Cloud, achieving 100% reduction in downtime.</p>
+                        <div class="project-tech">
+                            <span>Azure DevOps</span>
+                            <span>Azure App Service</span>
+                            <span>Key Vault</span>
+                            <span>CI/CD</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ENHANCED EXPERIENCE SECTION -->
-        <section id="experience" class="experience-section">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll">
-                    <span class="title-number">02.</span>
-                    Professional Journey
-                </h2>
-                <div class="timeline">
-                    <!-- Current Position -->
-                    <div class="timeline-item animate-on-scroll current">
-                        <div class="timeline-dot">
-                            <div class="pulse-ring"></div>
+    <!-- EXPERIENCE SECTION (title-number removed, pulse-ring fixed) -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Professional Journey</h2>
+            <div class="timeline">
+                <!-- Current Position with fixed pulse-ring -->
+                <div class="timeline-item animate-on-scroll current">
+                    <div class="timeline-dot">
+                        <div class="pulse-ring"></div>
+                    </div>
+                    <div class="timeline-date">Nov 2022 - Present</div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <h3>Senior Backend Engineer</h3>
+                            <p class="company">ABN AMRO Bank N.V.</p>
+                            <span class="location">Amsterdam, Netherlands</span>
                         </div>
-                        <div class="timeline-date">Nov 2022 - Present</div>
-                        <div class="timeline-content">
-                            <div class="experience-header">
-                                <h3>Senior Backend Engineer</h3>
-                                <p class="company">ABN AMRO Bank N.V.</p>
-                                <span class="location">Amsterdam, Netherlands</span>
-                            </div>
-                            <ul class="responsibilities">
-                                <li>Leading backend development for Payments team handling millions of daily transactions</li>
-                                <li>Developed RESTful APIs using Java 17 and Spring Boot 3</li>
-                                <li>Migrated legacy applications from IBM WebSphere to Azure Cloud</li>
-                                <li>Achieved 85% test coverage and 100% reduction in downtime</li>
-                            </ul>
-                            <div class="tech-stack">
-                                <span>Java 17</span>
-                                <span>Spring Boot 3</span>
-                                <span>Azure</span>
-                                <span>DevOps</span>
-                            </div>
+                        <ul class="responsibilities">
+                            <li>Leading backend development for Payments team handling millions of daily transactions</li>
+                            <li>Developed RESTful APIs using Java 17 and Spring Boot 3</li>
+                            <li>Migrated legacy applications from IBM WebSphere to Azure Cloud</li>
+                            <li>Achieved 85% test coverage and 100% reduction in downtime</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span>Java 17</span>
+                            <span>Spring Boot 3</span>
+                            <span>Azure</span>
+                            <span>DevOps</span>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Previous Positions -->
-                    <div class="timeline-item animate-on-scroll">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">Sep 2022 - Oct 2022</div>
-                        <div class="timeline-content">
-                            <div class="experience-header">
-                                <h3>Senior Software Developer</h3>
-                                <p class="company">Tide</p>
-                                <span class="location">Hyderabad, India</span>
-                            </div>
-                            <p>Senior Backend Engineer in the Agent Experience Service team.</p>
+                <!-- Previous positions remain the same structure -->
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Sep 2022 - Oct 2022</div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <h3>Senior Software Developer</h3>
+                            <p class="company">Tide</p>
+                            <span class="location">Hyderabad, India</span>
                         </div>
+                        <p>Senior Backend Engineer in the Agent Experience Service team.</p>
                     </div>
+                </div>
 
-                    <div class="timeline-item animate-on-scroll">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">Mar 2021 - Sep 2022</div>
-                        <div class="timeline-content">
-                            <div class="experience-header">
-                                <h3>Senior Software Engineer</h3>
-                                <p class="company">Gap Inc.</p>
-                                <span class="location">Hyderabad, India</span>
-                            </div>
-                            <ul class="responsibilities">
-                                <li>Created and integrated 20+ microservices using Spring Boot</li>
-                                <li>Implemented Kafka & RabbitMQ for service communication</li>
-                                <li>Led story grooming and code reviews</li>
-                                <li>Integrated Azure blob storage for file management</li>
-                            </ul>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Mar 2021 - Sep 2022</div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <h3>Senior Software Engineer</h3>
+                            <p class="company">Gap Inc.</p>
+                            <span class="location">Hyderabad, India</span>
                         </div>
+                        <ul class="responsibilities">
+                            <li>Created and integrated 20+ microservices using Spring Boot</li>
+                            <li>Implemented Kafka & RabbitMQ for service communication</li>
+                            <li>Led story grooming and code reviews</li>
+                            <li>Integrated Azure blob storage for file management</li>
+                        </ul>
                     </div>
+                </div>
 
-                    <div class="timeline-item animate-on-scroll">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">Jul 2017 - Mar 2021</div>
-                        <div class="timeline-content">
-                            <div class="experience-header">
-                                <h3>Programmer Analyst (Full Stack)</h3>
-                                <p class="company">Qualcomm</p>
-                                <span class="location">Hyderabad, India</span>
-                            </div>
-                            <ul class="responsibilities">
-                                <li>Developed key features including approval workflows</li>
-                                <li>Integrated third-party services like ServiceNow and SOLR</li>
-                                <li>Created AWS Lambda jobs for automated reporting</li>
-                                <li>Implemented Swagger for API documentation</li>
-                            </ul>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Jul 2017 - Mar 2021</div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <h3>Programmer Analyst (Full Stack)</h3>
+                            <p class="company">Qualcomm</p>
+                            <span class="location">Hyderabad, India</span>
                         </div>
+                        <ul class="responsibilities">
+                            <li>Developed key features including approval workflows</li>
+                            <li>Integrated third-party services like ServiceNow and SOLR</li>
+                            <li>Created AWS Lambda jobs for automated reporting</li>
+                            <li>Implemented Swagger for API documentation</li>
+                        </ul>
                     </div>
+                </div>
 
-                    <div class="timeline-item animate-on-scroll">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">Jun 2015 - Jul 2017</div>
-                        <div class="timeline-content">
-                            <div class="experience-header">
-                                <h3>System Engineer (Full Stack)</h3>
-                                <p class="company">Tata Consultancy Services</p>
-                                <span class="location">Nagpur, India</span>
-                            </div>
-                            <p>Full stack developer for internal corporate projects. Led a team of 7 during training period and received "ILP Kudos" award.</p>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Jun 2015 - Jul 2017</div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <h3>System Engineer (Full Stack)</h3>
+                            <p class="company">Tata Consultancy Services</p>
+                            <span class="location">Nagpur, India</span>
                         </div>
+                        <p>Full stack developer for internal corporate projects. Led a team of 7 during training period and received "ILP Kudos" award.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ENHANCED SKILLS SECTION -->
-        <section id="skills" class="skills-section">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll">
-                    <span class="title-number">03.</span>
-                    Core Technologies
-                </h2>
-                <div class="skills-grid">
-                    <a href="https://www.oracle.com/java/" target="_blank" class="skill-card animate-on-scroll">
-                        <div class="skill-icon">
-                            <img src="https://www.vectorlogo.zone/logos/java/java-icon.svg" alt="Java">
+    <!-- SKILLS SECTION (title-number removed) -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Core Technologies</h2>
+            <div class="skills-grid">
+                <a href="https://www.oracle.com/java/" target="_blank" class="skill-card animate-on-scroll">
+                    <div class="skill-icon">
+                        <img src="https://www.vectorlogo.zone/logos/java/java-icon.svg" alt="Java">
+                    </div>
+                    <span>Java</span>
+                    <div class="skill-level">
+                        <div class="skill-bar" data-level="95"></div>
+                    </div>
+                </a>
+
+                <a href="https://spring.io/projects/spring-boot" target="_blank" class="skill-card animate-on-scroll">
+                    <div class="skill-icon">
+                        <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="Spring Boot">
+                    </div>
+                    <span>Spring Boot</span>
+                    <div class="skill-level">
+                        <div class="skill-bar" data-level="90"></div>
+                    </div>
+                </a>
+
+                <a href="https://azure.microsoft.com/" target="_blank" class="skill-card animate-on-scroll">
+                    <div class="skill-icon">
+                        <img src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" alt="Azure">
+                    </div>
+                    <span>Azure</span>
+                    <div class="skill-level">
+                        <div class="skill-bar" data-level="85"></div>
+                    </div>
+                </a>
+
+                <a href="https://kubernetes.io/" target="_blank" class="skill-card animate-on-scroll">
+                    <div class="skill-icon">
+                        <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="Microservices">
+                    </div>
+                    <span>Microservices</span>
+                    <div class="skill-level">
+                        <div class="skill-bar" data-level="88"></div>
+                    </div>
+                </a>
+
+                <a href="https://www.postgresql.org/" target="_blank" class="skill-card animate-on-scroll">
+                    <div class="skill-icon">
+                        <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg" alt="PostgreSQL">
+                    </div>
+                    <span>PostgreSQL</span>
+                    <div class="skill-level">
+                        <div class="skill-bar" data-level="80"></div>
+                    </div>
+                </a>
+
+                <a href="https://www.mongodb.com/" target="_blank" class="skill-card animate-on-scroll">
+                    <div class="skill-icon">
+                        <img src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg" alt="MongoDB">
+                    </div>
+                    <span>MongoDB</span>
+                    <div class="skill-level">
+                        <div class="skill-bar" data-level="75"></div>
+                    </div>
+                </a>
+
+                <a href="https://kafka.apache.org/" target="_blank" class="skill-card animate-on-scroll">
+                    <div class="skill-icon">
+                        <img src="https://www.vectorlogo.zone/logos/apache_kafka/apache_kafka-icon.svg" alt="Kafka">
+                    </div>
+                    <span>Apache Kafka</span>
+                    <div class="skill-level">
+                        <div class="skill-bar" data-level="82"></div>
+                    </div>
+                </a>
+
+                <a href="https://www.rabbitmq.com/" target="_blank" class="skill-card animate-on-scroll">
+                    <div class="skill-icon">
+                        <img src="https://www.vectorlogo.zone/logos/rabbitmq/rabbitmq-icon.svg" alt="RabbitMQ">
+                    </div>
+                    <span>RabbitMQ</span>
+                    <div class="skill-level">
+                        <div class="skill-bar" data-level="78"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION (title-number removed) -->
+    <footer id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info animate-on-scroll">
+                    <h3>Let's Work Together</h3>
+                    <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious vision. Feel free to reach out if you'd like to connect!</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jshubham@live.in</span>
                         </div>
-                        <span>Java</span>
-                        <div class="skill-level">
-                            <div class="skill-bar" data-level="95"></div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Almere, Netherlands</span>
                         </div>
-                    </a>
-                    
-                    <a href="https://spring.io/projects/spring-boot" target="_blank" class="skill-card animate-on-scroll">
-                        <div class="skill-icon">
-                            <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="Spring Boot">
+                        <div class="contact-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Senior Backend Engineer</span>
                         </div>
-                        <span>Spring Boot</span>
-                        <div class="skill-level">
-                            <div class="skill-bar" data-level="90"></div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container animate-on-scroll">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Your Name</label>
                         </div>
-                    </a>
-                    
-                    <a href="https://azure.microsoft.com/" target="_blank" class="skill-card animate-on-scroll">
-                        <div class="skill-icon">
-                            <img src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" alt="Azure">
+
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Your Email</label>
                         </div>
-                        <span>Azure</span>
-                        <div class="skill-level">
-                            <div class="skill-bar" data-level="85"></div>
+
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" required>
+                            <label for="subject">Subject</label>
                         </div>
-                    </a>
-                    
-                    <a href="https://kubernetes.io/" target="_blank" class="skill-card animate-on-scroll">
-                        <div class="skill-icon">
-                            <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="Microservices">
+
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Your Message</label>
                         </div>
-                        <span>Microservices</span>
-                        <div class="skill-level">
-                            <div class="skill-bar" data-level="88"></div>
-                        </div>
-                    </a>
-                    
-                    <a href="https://www.postgresql.org/" target="_blank" class="skill-card animate-on-scroll">
-                        <div class="skill-icon">
-                            <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg" alt="PostgreSQL">
-                        </div>
-                        <span>PostgreSQL</span>
-                        <div class="skill-level">
-                            <div class="skill-bar" data-level="80"></div>
-                        </div>
-                    </a>
-                    
-                    <a href="https://www.mongodb.com/" target="_blank" class="skill-card animate-on-scroll">
-                        <div class="skill-icon">
-                            <img src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg" alt="MongoDB">
-                        </div>
-                        <span>MongoDB</span>
-                        <div class="skill-level">
-                            <div class="skill-bar" data-level="75"></div>
-                        </div>
-                    </a>
-                    
-                    <a href="https://kafka.apache.org/" target="_blank" class="skill-card animate-on-scroll">
-                        <div class="skill-icon">
-                            <img src="https://www.vectorlogo.zone/logos/apache_kafka/apache_kafka-icon.svg" alt="Kafka">
-                        </div>
-                        <span>Apache Kafka</span>
-                        <div class="skill-level">
-                            <div class="skill-bar" data-level="82"></div>
-                        </div>
-                    </a>
-                    
-                    <a href="https://www.rabbitmq.com/" target="_blank" class="skill-card animate-on-scroll">
-                        <div class="skill-icon">
-                            <img src="https://www.vectorlogo.zone/logos/rabbitmq/rabbitmq-icon.svg" alt="RabbitMQ">
-                        </div>
-                        <span>RabbitMQ</span>
-                        <div class="skill-level">
-                            <div class="skill-bar" data-level="78"></div>
-                        </div>
-                    </a>
+
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
-        </section>
 
-        <!-- ENHANCED CONTACT SECTION WITH FORM -->
-        <footer id="contact" class="contact-section">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll">
-                    <span class="title-number">04.</span>
-                    Get In Touch
-                </h2>
-                <div class="contact-content">
-                    <div class="contact-info animate-on-scroll">
-                        <h3>Let's Work Together</h3>
-                        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious vision. Feel free to reach out if you'd like to connect!</p>
-                        
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>jshubham@live.in</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Almere, Netherlands</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-briefcase"></i>
-                                <span>Senior Backend Engineer</span>
-                            </div>
-                        </div>
+            <div class="email-popup" id="emailPopup">
+                <div class="popup-content">
+                    <div class="popup-header">
+                        <h3>Send me an email</h3>
+                        <button class="close-popup" id="closePopup">&times;</button>
                     </div>
-                    
-                    <div class="contact-form-container animate-on-scroll">
-                        <form class="contact-form" id="contactForm">
-                            <div class="form-group">
-                                <input type="text" id="name" name="name" required>
-                                <label for="name">Your Name</label>
-                            </div>
-                            
-                            <div class="form-group">
-                                <input type="email" id="email" name="email" required>
-                                <label for="email">Your Email</label>
-                            </div>
-                            
-                            <div class="form-group">
-                                <input type="text" id="subject" name="subject" required>
-                                <label for="subject">Subject</label>
-                            </div>
-                            
-                            <div class="form-group">
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                                <label for="message">Your Message</label>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary submit-btn">
-                                <span>Send Message</span>
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                
-                <div class="email-popup" id="emailPopup">
-                    <div class="popup-content">
-                        <div class="popup-header">
-                            <h3>Send me an email</h3>
-                            <button class="close-popup" id="closePopup">&times;</button>
-                        </div>
-                        <div class="popup-body">
-                            <p><strong>To:</strong> jshubham@live.in</p>
-                            <p><strong>Subject:</strong> Collaboration Opportunity</p>
-                            <p><strong>Message:</strong></p>
-                            <textarea readonly>Hi Shubham,
+                    <div class="popup-body">
+                        <p><strong>To:</strong> jshubham@live.in</p>
+                        <p><strong>Subject:</strong> Collaboration Opportunity</p>
+                        <p><strong>Message:</strong></p>
+                        <textarea readonly>Hi Shubham,
 
 I came across your portfolio and I'm impressed with your experience in Java, Spring Boot, and Azure technologies. I'd like to discuss a potential collaboration opportunity.
 
 Looking forward to hearing from you!
 
 Best regards,</textarea>
-                            <div class="popup-actions">
-                                <a href="mailto:jshubham@live.in?subject=Collaboration%20Opportunity&body=Hi%20Shubham%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20I%27m%20impressed%20with%20your%20experience%20in%20Java%2C%20Spring%20Boot%2C%20and%20Azure%20technologies.%20I%27d%20like%20to%20discuss%20a%20potential%20collaboration%20opportunity.%0D%0A%0D%0ALooking%20forward%20to%20hearing%20from%20you%21%0D%0A%0D%0ABest%20regards%2C" class="btn btn-primary">Open Email Client</a>
-                            </div>
+                        <div class="popup-actions">
+                            <a href="mailto:jshubham@live.in?subject=Collaboration%20Opportunity&body=Hi%20Shubham%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20I%27m%20impressed%20with%20your%20experience%20in%20Java%2C%20Spring%20Boot%2C%20and%20Azure%20technologies.%20I%27d%20like%20to%20discuss%20a%20potential%20collaboration%20opportunity.%0D%0A%0D%0ALooking%20forward%20to%20hearing%20from%20you%21%0D%0A%0D%0ABest%20regards%2C" class="btn btn-primary">Open Email Client</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>
-    </main>
+        </div>
+    </footer>
+</main>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

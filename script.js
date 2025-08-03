@@ -1,47 +1,66 @@
-document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Dynamic Navbar Styling on Scroll ---
+document.addEventListener('DOMContentLoaded', () => {
+    // --- Enhanced Navbar Functionality ---
     const header = document.querySelector('.main-header');
+    const hamburger = document.querySelector('#hamburger');
+    const navMenu = document.querySelector('.nav-menu');
     let lastScrollY = window.scrollY;
-    
+
+    // Improved scroll behavior
     window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY;
-        
+
         if (currentScrollY > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
-        
-        // Hide/show navbar on scroll
+
+        // Smart navbar hiding/showing
         if (currentScrollY > lastScrollY && currentScrollY > 100) {
             header.style.transform = 'translateY(-100%)';
         } else {
             header.style.transform = 'translateY(0)';
         }
-        
+
         lastScrollY = currentScrollY;
     });
 
-    // --- Mobile Menu (Hamburger) ---
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".nav-menu");
-    
-    hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
-        document.body.style.overflow = navMenu.classList.contains("active") ? "hidden" : "auto";
-    });
-    
-    document.querySelectorAll(".nav-link").forEach(link => {
-        link.addEventListener("click", () => {
-            hamburger.classList.remove("active");
-            navMenu.classList.remove("active");
-            document.body.style.overflow = "auto";
-        });
-    });
+    // Enhanced mobile menu functionality
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
 
-    // --- Enhanced Intersection Observer for Scroll Animations ---
+            // Prevent body scroll when menu is open
+            if (navMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close menu when clicking nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+
+    // --- Enhanced scroll animations ---
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -51,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                
+
                 // Animate skill bars
                 if (entry.target.classList.contains('skill-card')) {
                     const skillBar = entry.target.querySelector('.skill-bar');
@@ -66,13 +85,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
+    // Observe elements for animations
     const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
     elementsToAnimate.forEach((el, index) => {
         el.style.setProperty('--animation-order', index);
         observer.observe(el);
     });
 
-    // --- Intersection Observer for Active Nav Link Highlighting ---
+    // --- Active nav link highlighting ---
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-menu a.nav-link');
 
