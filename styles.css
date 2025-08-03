@@ -226,15 +226,27 @@ section {
 .hero-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 60px;
+    justify-content: flex-start; /* Aligns content to the left */
+    gap: 60px; /* Space between image and text */
     width: 100%;
     z-index: 2;
     position: relative;
 }
 
+.text-content {
+    flex: 1;
+    max-width: none;
+    text-align: left;
+    order: 2;
+    position: relative;
+    z-index: 5; /* Above background, below buttons */
+}
+
 .profile-section {
     flex-shrink: 0;
+    order: 1;
+    position: relative;
+    z-index: 5; /* Same as text content */
 }
 
 .profile-image-container {
@@ -254,21 +266,31 @@ section {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     backdrop-filter: blur(15px);
-    overflow: hidden;
     border: 4px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    z-index: 6; /* Above other profile elements */
+    overflow: hidden;
 }
 
-.profile-avatar {
+/* Real profile picture styling */
+.profile-pic {
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
+    object-fit: cover; /* Ensures proper cropping */
+    border-radius: 50%;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease;
 }
 
+/* Hide icon when image is present */
+.profile-image:has(.profile-pic) .profile-icon-wrapper {
+    display: none;
+}
+
+/* Show icon only if image fails to load */
 .profile-icon-wrapper {
     width: 120px;
     height: 120px;
@@ -279,13 +301,22 @@ section {
     justify-content: center;
     position: relative;
     box-shadow: 0 10px 30px rgba(255, 111, 0, 0.3);
+    z-index: 2;
 }
 
 .profile-icon {
     font-size: 3.5rem;
     color: var(--light-text-color);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
+/* Enhanced hover effect for real photo */
+.profile-image:hover .profile-pic {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Animated ring around profile */
 .profile-ring {
     position: absolute;
     width: 260px;
@@ -298,6 +329,8 @@ section {
     top: -20px;
     left: -20px;
     opacity: 0.7;
+    z-index: 4; /* Behind profile image */
+    pointer-events: none; /* Don't interfere with clicks */
 }
 
 @keyframes rotate {
@@ -305,9 +338,28 @@ section {
     100% { transform: rotate(360deg); }
 }
 
-.text-content {
-    flex: 1;
-    max-width: 600px;
+/* Image loading states */
+.profile-pic {
+    opacity: 0;
+    animation: fadeInImage 0.8s ease-out 0.3s forwards;
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Error handling - show icon if image fails */
+.profile-pic:not([src]),
+.profile-pic[src=""],
+.profile-pic[src="#"] {
+    display: none;
 }
 
 .name {
@@ -362,6 +414,9 @@ section {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 10; /* Ensure buttons are above other elements */
+    margin-top: 30px;
 }
 
 .btn {
@@ -372,13 +427,20 @@ section {
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
+    position: relative;
+    z-index: 11; /* Higher z-index than container */
+    cursor: pointer; /* Ensure cursor shows as pointer */
+    user-select: none; /* Prevent text selection */
+    white-space: nowrap;
 }
 
 .btn-primary {
     background: var(--accent-color);
     color: var(--light-text-color);
     box-shadow: 0 8px 25px rgba(255, 111, 0, 0.3);
+    border: none;
 }
 
 .btn-secondary {
@@ -390,10 +452,18 @@ section {
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    cursor: pointer; /* Ensure hover cursor */
+}
+
+.btn:active {
+    transform: translateY(-1px); /* Feedback on click */
+    transition: transform 0.1s ease;
 }
 
 .pulse-animation {
     animation: pulse 2s infinite;
+    position: relative;
+    z-index: 12; /* Highest z-index for primary button */
 }
 
 @keyframes pulse {
@@ -402,7 +472,7 @@ section {
     100% { box-shadow: 0 0 0 0 rgba(255, 111, 0, 0); }
 }
 
-/* Background elements */
+/* Fix background elements z-index */
 .background-shapes {
     position: absolute;
     top: 0;
@@ -410,7 +480,7 @@ section {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: 1;
+    z-index: 1; /* Keep background elements behind */
 }
 
 .shape {
@@ -418,6 +488,7 @@ section {
     border-radius: 50%;
     opacity: 0.1;
     animation: float 20s infinite linear;
+    z-index: 1; /* Ensure shapes stay in background */
 }
 
 .shape-1 {
@@ -457,7 +528,7 @@ section {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 1; /* Keep floating elements behind buttons */
 }
 
 .floating-element {
@@ -465,6 +536,8 @@ section {
     font-size: 2rem;
     opacity: 0.3;
     animation: floatUpDown 6s ease-in-out infinite;
+    z-index: 1;
+    pointer-events: none; /* Prevent interference with clicks */
 }
 
 .floating-element:nth-child(1) {
@@ -1105,6 +1178,31 @@ section {
 }
 
 /* --- RESPONSIVE DESIGN --- */
+
+* Enhanced spacing for larger screens */
+@media(min-width: 1200px) {
+    .hero-content {
+        gap: 80px; /* More space on very large screens */
+        justify-content: flex-start;
+    }
+
+    .profile-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .profile-ring {
+        width: 290px;
+        height: 290px;
+        top: -20px;
+        left: -20px;
+    }
+
+    .text-content {
+        padding-left: 20px; /* Additional spacing from image */
+    }
+}
+
 @media(max-width: 1024px) {
     .nav-link {
         padding: 12px 14px;
@@ -1117,12 +1215,13 @@ section {
     }
 
     .hero-content {
-        gap: 40px;
+        gap: 60px;
+        justify-content: flex-start;
     }
 
     .profile-image {
-        width: 180px;
-        height: 180px;
+        width: 220px;
+        height: 220px;
     }
 
     .profile-ring {
@@ -1135,8 +1234,16 @@ section {
         height: 100px;
     }
 
+    .profile-icon {
+        font-size: 3rem;
+    }
+
     .name {
         font-size: 3.5rem;
+    }
+
+    .text-content {
+        padding-left: 0;
     }
 
     .contact-content {
@@ -1217,7 +1324,7 @@ section {
     .hero-content {
         flex-direction: column;
         text-align: center;
-        gap: 40px;
+        gap: 30px;
     }
 
     .text-content {
@@ -1232,6 +1339,15 @@ section {
     .profile-ring {
         width: 200px;
         height: 200px;
+    }
+
+    .profile-icon-wrapper {
+        width: 90px;
+        height: 90px;
+    }
+
+    .profile-icon {
+        font-size: 2.5rem;
     }
 
     .name {
@@ -1277,9 +1393,18 @@ section {
         padding: 0 15px;
     }
 
+    .hero-content {
+        gap: 25px;
+    }
+
     .profile-image {
         width: 140px;
         height: 140px;
+    }
+
+    .profile-ring {
+        width: 180px;
+        height: 180px;
     }
 
     .profile-icon-wrapper {
