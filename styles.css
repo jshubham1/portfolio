@@ -268,7 +268,7 @@ section {
     backdrop-filter: blur(15px);
     border: 4px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    z-index: 6; /* Above other profile elements */
+    z-index: 3; /* Above the ring */
     overflow: hidden;
 }
 
@@ -276,9 +276,9 @@ section {
 .profile-pic {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures proper cropping */
+    object-fit: cover;
     border-radius: 50%;
-    z-index: 3;
+    z-index: 4;
     position: absolute;
     top: 0;
     left: 0;
@@ -325,17 +325,18 @@ section {
     border-radius: 50%;
     border-top: 3px solid transparent;
     border-right: 3px solid transparent;
-    animation: rotate 15s linear infinite;
-    top: -20px;
-    left: -20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Perfect centering */
     opacity: 0.7;
-    z-index: 4; /* Behind profile image */
-    pointer-events: none; /* Don't interfere with clicks */
+    z-index: 1; /* Always behind the image */
+    pointer-events: none;
+    animation: rotate 15s linear infinite; /* Ensure animation is always applied */
 }
 
 @keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 /* Image loading states */
@@ -729,8 +730,9 @@ section {
 /* Perfect pulse ring positioning */
 .pulse-ring {
     position: absolute;
-    top: -14px; /* Centers the ring */
-    left: -14px; /* Centers the ring */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 48px;
     height: 48px;
     border: 2px solid var(--secondary-color);
@@ -738,15 +740,16 @@ section {
     opacity: 0.7;
     animation: pulse-ring 2s infinite ease-out;
     pointer-events: none;
+    z-index: 1; /* Behind the timeline dot */
 }
 
 @keyframes pulse-ring {
     0% {
-        transform: scale(0.5);
+        transform: translate(-50%, -50%) scale(0.5);
         opacity: 1;
     }
     100% {
-        transform: scale(1.5);
+        transform: translate(-50%, -50%) scale(1.5);
         opacity: 0;
     }
 }
@@ -1181,7 +1184,17 @@ section {
 
 * Enhanced spacing for larger screens */
 @media(min-width: 1200px) {
-    .hero-content {
+        .nav-link {
+        padding: 12px 14px;
+        font-size: 0.95rem;
+    }
+
+    .nav-link::before {
+        left: 14px;
+        right: 14px;
+    }
+
+.hero-content {
         gap: 80px; /* More space on very large screens */
         justify-content: flex-start;
     }
@@ -1194,48 +1207,14 @@ section {
     .profile-ring {
         width: 290px;
         height: 290px;
-        top: -20px;
-        left: -20px;
     }
-
-    .text-content {
-        padding-left: 20px; /* Additional spacing from image */
-    }
-}
-
-@media(max-width: 1024px) {
-    .nav-link {
-        padding: 12px 14px;
-        font-size: 0.95rem;
-    }
-
-    .nav-link::before {
-        left: 14px;
-        right: 14px;
-    }
-
-    .hero-content {
-        gap: 60px;
-        justify-content: flex-start;
-    }
-
-    .profile-image {
-        width: 220px;
-        height: 220px;
-    }
-
-    .profile-ring {
-        width: 220px;
-        height: 220px;
-    }
-
     .profile-icon-wrapper {
-        width: 100px;
-        height: 100px;
+        width: 140px;
+        height: 140px;
     }
 
     .profile-icon {
-        font-size: 3rem;
+        font-size: 4rem;
     }
 
     .name {
@@ -1257,6 +1236,104 @@ section {
         top: 0;
         display: inline-block;
         margin-bottom: 15px;
+    }
+}
+
+@media(min-width: 1024px) and (max-width: 1199px) {
+    .nav-link {
+        padding: 12px 14px;
+        font-size: 0.95rem;
+    }
+
+    .nav-link::before {
+        left: 14px;
+        right: 14px;
+    }
+
+    .hero-content {
+        gap: 60px;
+        justify-content: flex-start;
+    }
+
+    .profile-image {
+        width: 220px;
+        height: 220px;
+    }
+
+    .profile-ring {
+        width: 260px;
+        height: 260px;
+    }
+
+    .profile-icon-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-icon {
+        font-size: 3.5rem;
+    }
+
+    .name {
+        font-size: 3.5rem;
+    }
+
+    .text-content {
+        padding-left: 0;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .timeline-date {
+        position: relative;
+        left: 0;
+        top: 0;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+}
+
+@media(max-width: 1023px) {
+    .hero-content {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .profile-section {
+        order: 1;
+    }
+
+    .text-content {
+        order: 2;
+        text-align: center;
+        max-width: 100%;
+        padding-left: 0;
+    }
+
+    .profile-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .profile-ring {
+        width: 220px;
+        height: 220px;
+        /* Centered positioning ensures no overlap */
+        z-index: 1; /* Always behind image */
+    }
+
+    .profile-icon-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-icon {
+        font-size: 3rem;
     }
 }
 
@@ -1458,5 +1535,27 @@ section {
 
     .contact-form-container {
         padding: 20px 15px;
+    }
+}
+
+/* Extra small devices */
+@media(max-width: 320px) {
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-ring {
+        width: 160px;
+        height: 160px;
+    }
+
+    .profile-icon-wrapper {
+        width: 70px;
+        height: 70px;
+    }
+
+    .profile-icon {
+        font-size: 1.8rem;
     }
 }
