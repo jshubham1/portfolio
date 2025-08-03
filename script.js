@@ -1,5 +1,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
+    // --- GitHub Configuration ---
+    const GITHUB_USERNAME = 'jshubham1'; // Your GitHub username
+    const GITHUB_API_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos`;
+
     // --- Enhanced Navbar Functionality ---
     const header = document.querySelector('.main-header');
     const hamburger = document.querySelector('#hamburger');
@@ -60,6 +64,222 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- GitHub Projects Fetcher ---
+    async function fetchGitHubProjects() {
+        const projectsGrid = document.querySelector('.projects-grid');
+        const sectionTitle = document.querySelector('#projects .section-title');
+
+        // Show loading state
+        projectsGrid.innerHTML = `
+            <div class="loading-projects">
+                <div class="loader"></div>
+                <p>Fetching latest projects from GitHub...</p>
+            </div>
+        `;
+
+        try {
+            const response = await fetch(GITHUB_API_URL + '?sort=updated&per_page=50');
+
+            if (!response.ok) {
+                throw new Error(`GitHub API responded with ${response.status}: ${response.statusText}`);
+            }
+
+            const repositories = await response.json();
+
+            // Filter and sort repositories
+            const filteredRepos = repositories
+                .filter(repo => !repo.fork && !repo.archived) // Exclude forks and archived repos
+                .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at)) // Sort by last updated
+                .slice(0, 5); // Get top 5
+
+            // Clear loading state
+            projectsGrid.innerHTML = '';
+
+            // Update section title
+            sectionTitle.textContent = 'Latest GitHub Projects';
+
+            // Generate project cards
+            filteredRepos.forEach((repo, index) => {
+                const projectCard = createProjectCard(repo, index);
+                projectsGrid.appendChild(projectCard);
+            });
+
+            // Re-apply animations to new elements
+            applyAnimationsToProjects();
+
+        } catch (error) {
+            console.error('Error fetching GitHub projects:', error);
+            showFallbackProjects();
+        }
+    }
+
+    // --- Create Project Card from GitHub Data ---
+    function createProjectCard(repo, index) {
+        const card = document.createElement('div');
+        card.className = 'project-card animate-on-scroll';
+        card.style.animationDelay = `${index * 0.1}s`;
+
+        // Generate project image based on primary language
+        const projectImage = getProjectImage(repo.language);
+
+        // Parse topics/technologies
+        const technologies = repo.topics || [];
+        if (repo.language && !technologies.includes(repo.language.toLowerCase())) {
+            technologies.unshift(repo.language);
+        }
+
+        // Limit description length
+        const description = repo.description
+            ? (repo.description.length > 120
+                ? repo.description.substring(0, 120) + '...'
+                : repo.description)
+            : 'No description available.';
+
+        card.innerHTML = `
+            <div class="project-image-container">
+                <img alt="${repo.name} Project" class="project-image" src="${projectImage}">
+                <div class="project-overlay">
+                    <div class="project-links">
+                        ${repo.homepage ? `<a href="${repo.homepage}" target="_blank" class="project-link" title="Live Demo">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>` : ''}
+                        <a href="${repo.html_url}" target="_blank" class="project-link" title="View Source">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-info">
+                <h3 class="project-title">${formatRepoName(repo.name)}</h3>
+                <p class="project-description">${description}</p>
+                <div class="project-stats">
+                    <span class="stat">
+                        <i class="fas fa-star"></i>
+                        ${repo.stargazers_count}
+                    </span>
+                    <span class="stat">
+                        <i class="fas fa-code-branch"></i>
+                        ${repo.forks_count}
+                    </span>
+                    <span class="stat">
+                        <i class="fas fa-calendar-alt"></i>
+                        ${formatDate(repo.updated_at)}
+                    </span>
+                </div>
+                ${technologies.length > 0 ? `
+                <div class="project-tech">
+                    ${technologies.slice(0, 4).map(tech =>
+                        `<span>${tech}</span>`
+                    ).join('')}
+                </div>
+                ` : ''}
+            </div>
+        `;
+
+        return card;
+    }
+
+    // --- Helper Functions ---
+    function getProjectImage(language) {
+        const imageMap = {
+            'JavaScript': 'https://picsum.photos/seed/javascript/600/400',
+            'Java': 'https://picsum.photos/seed/java/600/400',
+            'Python': 'https://picsum.photos/seed/python/600/400',
+            'TypeScript': 'https://picsum.photos/seed/typescript/600/400',
+            'HTML': 'https://picsum.photos/seed/html/600/400',
+            'CSS': 'https://picsum.photos/seed/css/600/400',
+            'React': 'https://picsum.photos/seed/react/600/400',
+            'Vue': 'https://picsum.photos/seed/vue/600/400',
+            'Angular': 'https://picsum.photos/seed/angular/600/400',
+            'Node.js': 'https://picsum.photos/seed/nodejs/600/400',
+            'Go': 'https://picsum.photos/seed/golang/600/400',
+            'Rust': 'https://picsum.photos/seed/rust/600/400',
+            'C++': 'https://picsum.photos/seed/cpp/600/400',
+            'C#': 'https://picsum.photos/seed/csharp/600/400'
+        };
+
+        return imageMap[language] || 'https://picsum.photos/seed/project/600/400';
+    }
+
+    function formatRepoName(name) {
+        return name
+            .split('-')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+    }
+
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric'
+        });
+    }
+
+    function showFallbackProjects() {
+        const projectsGrid = document.querySelector('.projects-grid');
+        const sectionTitle = document.querySelector('#projects .section-title');
+
+        sectionTitle.textContent = 'Featured Projects';
+
+        projectsGrid.innerHTML = `
+            <div class="project-card animate-on-scroll">
+                <div class="project-image-container">
+                    <img alt="Banking API Project" class="project-image" src="https://picsum.photos/seed/banking/600/400">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="https://github.com/${GITHUB_USERNAME}" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Banking Payment APIs</h3>
+                    <p class="project-description">RESTful APIs for SEPA and International payments handling millions of transactions daily with high scalability and reliability.</p>
+                    <div class="project-tech">
+                        <span>Java 17</span>
+                        <span>Spring Boot 3</span>
+                        <span>Azure</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="error-message">
+                <p><i class="fas fa-exclamation-triangle"></i> Unable to load projects from GitHub. Showing fallback projects.</p>
+            </div>
+        `;
+    }
+
+    function applyAnimationsToProjects() {
+        const newProjectCards = document.querySelectorAll('.project-card');
+
+        newProjectCards.forEach((card, index) => {
+            // Apply 3D hover effect
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            });
+
+            // Re-observe for scroll animations
+            observer.observe(card);
+        });
+    }
+
     // --- Enhanced scroll animations ---
     const observerOptions = {
         threshold: 0.1,
@@ -91,6 +311,9 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.setProperty('--animation-order', index);
         observer.observe(el);
     });
+
+    // --- Initialize GitHub Projects ---
+    fetchGitHubProjects();
 
     // --- Active nav link highlighting ---
     const sections = document.querySelectorAll('section[id]');
@@ -129,21 +352,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    if (closePopup) {
     closePopup.addEventListener('click', () => {
         emailPopup.classList.remove('active');
         document.body.style.overflow = 'auto';
     });
+    }
 
+    if (emailPopup) {
     emailPopup.addEventListener('click', (e) => {
         if (e.target === emailPopup) {
             emailPopup.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
     });
+    }
 
     // --- Contact Form Functionality ---
     const contactForm = document.getElementById('contactForm');
     
+    if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
@@ -171,6 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
             contactForm.reset();
         }, 3000);
     });
+    }
 
     // --- Smooth Scrolling Enhancement ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -240,31 +469,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Project Card 3D Hover Effect ---
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    projectCards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = (y - centerY) / 10;
-            const rotateY = (centerX - x) / 10;
-            
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-        });
-    });
-
     // --- Add Particle Animation to Hero Section ---
     const aboutSection = document.querySelector('.about-section');
+    if (aboutSection) {
     const particleCount = 50;
     
     for (let i = 0; i < particleCount; i++) {
@@ -281,10 +488,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
         aboutSection.appendChild(particle);
     }
-
+    }
 });
 
-// --- Add custom CSS for loading state ---
+// --- Add custom CSS for loading state and GitHub projects ---
 const style = document.createElement('style');
 style.textContent = `
     body:not(.loaded) * {
@@ -293,6 +500,90 @@ style.textContent = `
     
     .loaded .animate-on-load {
         animation-play-state: running !important;
+    }
+
+    /* Loading Projects Styles */
+    .loading-projects {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 20px;
+        color: var(--text-color);
+    }
+
+    .loader {
+        width: 40px;
+        height: 40px;
+        border: 4px solid var(--light-bg-color);
+        border-top: 4px solid var(--accent-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .loading-projects p {
+        font-size: 1.1rem;
+        opacity: 0.8;
+    }
+
+    /* Project Stats Styles */
+    .project-stats {
+        display: flex;
+        gap: 15px;
+        margin: 15px 0;
+        font-size: 0.9rem;
+        color: var(--text-color);
+        opacity: 0.8;
+    }
+
+    .stat {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .stat i {
+        color: var(--accent-color);
+        font-size: 0.8rem;
+    }
+
+    /* Error Message Styles */
+    .error-message {
+        grid-column: 1 / -1;
+        background: rgba(255, 107, 107, 0.1);
+        border: 1px solid rgba(255, 107, 107, 0.3);
+        border-radius: 8px;
+        padding: 15px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .error-message p {
+        color: #d63031;
+        margin: 0;
+    }
+
+    .error-message i {
+        margin-right: 8px;
+    }
+
+    /* Responsive adjustments for project stats */
+    @media(max-width: 480px) {
+        .project-stats {
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .stat {
+            font-size: 0.8rem;
+        }
     }
 `;
 document.head.appendChild(style);
