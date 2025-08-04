@@ -587,3 +587,201 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+
+
+// Recommendations data extracted from LinkedIn
+const recommendations = [
+    {
+        name: "Santhosh Penumarthi",
+        title: "Software Engineering Manager at Gap Inc.",
+        date: "October 10, 2022",
+        text: "I got to work with Shubham at Gap Inc. He is one of my team members. One thing he inspired me is his self-awareness. He knows where he is good at and on what areas he has to make more time for. Though he is exceptionally good on the technical front he strives to be at same level on the functional aspects as well. One other thing I liked about him is his constructive questioning ability.",
+        relationship: "Santhosh managed Shubham directly"
+    },
+    {
+        name: "Arishti Salaria",
+        title: "Software Engineer @Gap Inc.",
+        date: "September 15, 2022",
+        text: "I recently joined GAP Inc. and was lucky enough to work with Shubham. He is super friendly, hardworking and has a great knowledge in the micro services and spring boot area. Being a fresher to the company he helped me learn about the company, team, functionalities in a great manner. Always supported me to learn and ask more and more doubts.",
+        relationship: "Shubham was senior to Arishti but didn't manage Arishti directly"
+    },
+    {
+        name: "Kelly Borowski",
+        title: "Ex-corporate turned Meditation Teacher",
+        date: "April 20, 2021",
+        text: "Shubham is super easy to work with. I had the opportunity to work with Shubham on a web app development project. He is an excellent attentive listener, always openly receptive to input on UI/UX and implementation changes, while asking relevant questions to reach understanding and agreement on a direction forward.",
+        relationship: "Kelly worked with Shubham but on different teams"
+    },
+    {
+        name: "Nagendra Devireddy",
+        title: "Software Engineer at Apple",
+        date: "February 28, 2021",
+        text: "I had the opportunity of mentoring him, his initial days of Qualcomm. He has an easiness to build interpersonal relations with others. Shubham possesses a winning combination of solid tech skills and business sense, I learned a great deal from him. Give him the really challenging tasks, the ones that everyone else is struggling with, and he will get them done.",
+        relationship: "Nagendra was senior to Shubham but didn't manage Shubham directly"
+    },
+    {
+        name: "Vaibhav Jain",
+        title: "Principal Software Engineering Manager at Microsoft",
+        date: "September 8, 2020",
+        text: "Shubham is a dedicated and hardworking team member. He has been appreciated by his Project Lead and team members for his good work in AngularJs and Spring boot. He developed several modules using Clean Coding best practices. Shubham submitted research ideas to the Qualcomm's innovative idea's portal. Shubham has actively organized and participated in activities such as team outings.",
+        relationship: "Vaibhav managed Shubham directly"
+    },
+    {
+        name: "Abhishek Shukla",
+        title: "Recalibrating",
+        date: "May 15, 2018",
+        text: "Shubham is a focused, dedicated and jovial professional who believes in having ideas, transforming his ideas to vision and putting that vision to action. An eloquent public speaker and a fitness enthusiast, he always focuses on getting things done. In addition to his meticulous work ethics, he also is a great team player and a good event organizer.",
+        relationship: "Abhishek worked with Shubham on the same team"
+    }
+];
+
+// Truncate text to specified word count
+function truncateText(text, wordLimit = 50) {
+    const words = text.split(' ');
+    if (words.length <= wordLimit) return text;
+    return words.slice(0, wordLimit).join(' ') + '...';
+}
+
+// Get initials for avatar
+function getInitials(name) {
+    return name.split(' ').map(n => n[0]).join('').toUpperCase();
+}
+
+// Create recommendation card
+function createRecommendationCard(recommendation) {
+    const truncatedText = truncateText(recommendation.text, 50);
+
+    return `
+        <div class="recommendation-card">
+            <div class="recommender-info">
+                <div class="recommender-avatar">
+                    ${getInitials(recommendation.name)}
+                </div>
+                <div class="recommender-details">
+                    <h5>${recommendation.name}</h5>
+                    <p>${recommendation.title}</p>
+                </div>
+            </div>
+            <div class="recommendation-text">
+                "${truncatedText}"
+            </div>
+            <div class="recommendation-date">
+                ${recommendation.date}
+            </div>
+        </div>
+    `;
+}
+
+// Slider functionality
+let currentSlide = 0;
+const totalSlides = recommendations.length;
+let autoSlideInterval;
+
+function updateSlider() {
+    const sliderTrack = document.getElementById('sliderTrack');
+    const cardWidth = 370; // 350px card + 20px gap
+    const translateX = -currentSlide * cardWidth;
+    sliderTrack.style.transform = `translateX(${translateX}px)`;
+}
+
+function moveSlider(direction) {
+    if (direction === 'next') {
+        currentSlide = (currentSlide + 1) % totalSlides;
+    } else {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    }
+    updateSlider();
+    resetAutoSlide();
+}
+
+function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+        moveSlider('next');
+    }, 4000); // Change slide every 4 seconds
+}
+
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+}
+
+// Initialize recommendations section
+function initRecommendations() {
+    const sliderTrack = document.getElementById('sliderTrack');
+
+    if (!sliderTrack) return;
+
+    // Create recommendation cards
+    const cardsHTML = recommendations.map(createRecommendationCard).join('');
+    sliderTrack.innerHTML = cardsHTML;
+
+    // Start auto-slide
+    startAutoSlide();
+
+    // Pause auto-slide on hover
+    const slider = document.querySelector('.recommendations-slider');
+    slider.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+    slider.addEventListener('mouseleave', startAutoSlide);
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize recommendations after a short delay to ensure all elements are loaded
+    setTimeout(initRecommendations, 500);
+});
+
+// Handle window resize
+window.addEventListener('resize', updateSlider);
+
+// Add smooth scrolling to recommendation nav link
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
+
+// Add touch support for mobile devices
+let startX = 0;
+let endX = 0;
+
+function handleTouchStart(e) {
+    startX = e.touches[0].clientX;
+}
+
+function handleTouchEnd(e) {
+    endX = e.changedTouches[0].clientX;
+    handleSwipe();
+}
+
+function handleSwipe() {
+    const threshold = 50;
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > threshold) {
+        if (diff > 0) {
+            moveSlider('next');
+        } else {
+            moveSlider('prev');
+        }
+    }
+}
+
+// Add touch listeners
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.recommendations-slider');
+    if (slider) {
+        slider.addEventListener('touchstart', handleTouchStart);
+        slider.addEventListener('touchend', handleTouchEnd);
+    }
+});

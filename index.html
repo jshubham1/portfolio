@@ -24,6 +24,7 @@
                 <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
                 <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
                 <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#recommendations">Recommendations</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link contact-button">Contact</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
@@ -383,6 +384,34 @@
                         <div class="skill-bar" data-level="78"></div>
                     </div>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section class="py-5" id="recommendations">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">What People Say</h2>
+                    <p class="section-subtitle">Professional recommendations from colleagues and managers</p>
+                </div>
+            </div>
+
+            <div class="recommendations-slider">
+                <div class="slider-container">
+                    <div class="slider-track" id="sliderTrack">
+                        <!-- Recommendation cards will be dynamically inserted here -->
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn" onclick="moveSlider('prev')">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn next-btn" onclick="moveSlider('next')">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </section>

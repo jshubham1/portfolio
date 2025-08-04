@@ -911,6 +911,184 @@ section {
     transition: width 1.5s ease-in-out;
 }
 
+
+/* Recommendations Section */
+#recommendations {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+#recommendations::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+#recommendations .container {
+    position: relative;
+    z-index: 2;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+/* Slider Styles */
+.recommendations-slider {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.slider-container {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px;
+}
+
+/* Recommendation Card */
+.recommendation-card {
+    min-width: 350px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.recommendation-card::before {
+    content: '"';
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 4rem;
+    color: #667eea;
+    opacity: 0.3;
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.recommender-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.recommender-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+.recommender-details h5 {
+    margin: 0;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.recommender-details p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.recommendation-text {
+    color: #444;
+    font-style: italic;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 1rem;
+}
+
+.recommendation-date {
+    color: #888;
+    font-size: 0.8rem;
+    text-align: right;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Slider Controls */
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.slider-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.slider-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+.slider-btn:active {
+    transform: scale(0.95);
+}
+
+
 /* --- CONTACT SECTION --- */
 .contact-section {
     background: var(--dark-bg-color);
@@ -1179,6 +1357,23 @@ section {
         transform: translateY(0);
     }
 }
+
+/* Auto-slide animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.recommendation-card {
+    animation: slideIn 0.6s ease-out;
+}
+
 /* --- COMPREHENSIVE RESPONSIVE DESIGN --- */
 
 /* Extra Large Screens - 1200px and up */
@@ -1649,6 +1844,23 @@ section {
 
     .contact-form-container {
         padding: 30px 20px;
+    }
+    .recommendation-card {
+        min-width: 280px;
+        padding: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .slider-controls {
+        margin-top: 1.5rem;
+    }
+
+    .slider-btn {
+        width: 40px;
+        height: 40px;
     }
 }
 
