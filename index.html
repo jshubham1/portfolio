@@ -4,503 +4,925 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shubham Jain - Senior Software Developer</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@600;700&display=swap"
-          rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
 </head>
+
 <body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#home">
+            <span class="text-primary">Shubham</span><span class="text-warning">Jain</span>
+        </a>
 
-<!-- NAVBAR -->
-<header class="main-header">
-    <nav class="navbar">
-        <div class="container">
-            <a href="#about" class="nav-logo">
-                <span class="logo-text">Shubham</span>
-                <span class="logo-accent">Jain</span>
-            </a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a class="nav-link" href="#recommendations">Recommendations</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link contact-button">Contact</a></li>
+        <button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#experience">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#recommendations">Recommendations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-primary text-white px-4 rounded-pill ms-2" href="#contact">Contact</a>
+                </li>
             </ul>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section min-vh-100 d-flex align-items-center position-relative overflow-hidden" id="home">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-lg-6 order-lg-2 text-center mb-5 mb-lg-0">
+                <div class="profile-container position-relative">
+                    <div class="profile-image mx-auto">
+                        <img alt="Shubham Jain" class="profile-pic rounded-circle" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+                             src="images/profile-pic.jpg">
+                        <div class="profile-icon-wrapper rounded-circle d-none">
+                            <i class="fas fa-user profile-icon"></i>
+                        </div>
+                    </div>
+                    <div class="profile-ring position-absolute"></div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 order-lg-1">
+                <div class="hero-content text-center text-lg-start">
+                    <h1 class="display-3 fw-bold text-white mb-3 animate-fade-in">
+                        Hi, I'm <span class="text-warning">Shubham Jain</span>
+                    </h1>
+
+                    <p class="lead text-warning mb-4 typing-text">
+                        Senior Backend/Full Stack Developer
+                    </p>
+
+                    <p class="fs-5 text-white-75 mb-4 summary">
+                        Senior Backend/Full Stack Developer with over <strong>10 years</strong> of experience
+                        specializing in dynamic enterprise web applications and RESTful APIs. Currently leading
+                        backend development for <strong>ABN Amro Bank</strong>, focusing on API development,
+                        cloud infrastructure, and microservices architecture.
+                    </p>
+
+                    <div class="social-links d-flex justify-content-center justify-content-lg-start gap-3 mb-4">
+                        <a class="btn btn-outline-light rounded-pill" href="https://linkedin.com/in/jshubham">
+                            <i class="fab fa-linkedin-in me-2"></i>LinkedIn
+                        </a>
+                        <a class="btn btn-outline-light rounded-pill" href="https://github.com/jshubham1">
+                            <i class="fab fa-github me-2"></i>GitHub
+                        </a>
+                        <a class="btn btn-outline-light rounded-pill" href="mailto:jshubham@live.in">
+                            <i class="fas fa-envelope me-2"></i>Email
+                        </a>
+                    </div>
+
+                    <div class="cta-buttons d-flex justify-content-center justify-content-lg-start gap-3">
+                        <a class="btn btn-warning btn-lg rounded-pill px-4 pulse-btn" href="#contact">
+                            <i class="fas fa-paper-plane me-2"></i>Get In Touch
+                        </a>
+                        <a class="btn btn-outline-light btn-lg rounded-pill px-4" href="#projects">
+                            <i class="fas fa-eye me-2"></i>View My Work
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
-</header>
+    </div>
 
-<main>
-    <!-- HERO SECTION -->
-    <section id="about" class="about-section">
-        <div class="background-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-            <div class="floating-elements">
-                <div class="floating-element">☁️</div>
-                <div class="floating-element">⚡</div>
-                <div class="floating-element">🚀</div>
+    <!-- Background Elements -->
+    <div class="background-shapes position-absolute w-100 h-100 top-0 start-0">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+</section>
+
+<!-- Experience Section -->
+<section class="py-5" id="experience">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="display-4 fw-bold text-primary text-center mb-5">Experience</h2>
             </div>
         </div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="profile-section animate-on-load">
-                    <div class="profile-image-container">
-                        <div class="profile-image">
-                            <div class="profile-ring"></div>
-                            <!-- Your actual profile picture -->
-                            <img alt="Shubham Jain" class="profile-pic" src="images/profile-pic.jpg">
 
-                            <!-- Icon fallback (will be hidden when image loads) -->
-                            <div class="profile-icon-wrapper">
-                                <i class="fas fa-user-tie profile-icon"></i>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="timeline position-relative">
+
+                    <!-- ABN AMRO Bank - Current -->
+                    <div class="timeline-item mb-5">
+                        <div class="timeline-dot position-absolute bg-warning rounded-circle">
+                            <div class="pulse-ring position-absolute border border-warning rounded-circle"></div>
+                        </div>
+                        <div class="timeline-content bg-white rounded-3 shadow-sm p-4 ms-5">
+                            <div class="timeline-date badge bg-primary mb-3">Nov 2022 - Present</div>
+                            <h4 class="text-primary mb-2">Senior Backend Engineer</h4>
+                            <h5 class="text-warning mb-2">ABN AMRO Bank N.V.</h5>
+                            <p class="text-muted small mb-3">
+                                <i class="fas fa-map-marker-alt me-2"></i>Amsterdam, Netherlands
+                            </p>
+                            <ul class="list-unstyled mb-3">
+                                <li class="mb-2">
+                                    <i class="fas fa-chevron-right text-warning me-2"></i>
+                                    Leading backend development for Payments team handling millions of daily
+                                    transactions
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-chevron-right text-warning me-2"></i>
+                                    Developed RESTful APIs using Java 17 and Spring Boot 3
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-chevron-right text-warning me-2"></i>
+                                    Migrated legacy applications from IBM WebSphere to Azure Cloud
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-chevron-right text-warning me-2"></i>
+                                    Achieved 85% test coverage and 100% reduction in downtime
+                                </li>
+                            </ul>
+                            <div class="tech-stack d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge bg-light text-primary border border-primary">Java 17</span>
+                                <span class="badge bg-light text-primary border border-primary">Spring Boot 3</span>
+                                <span class="badge bg-light text-primary border border-primary">Azure</span>
+                                <span class="badge bg-light text-primary border border-primary">DevOps</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tide -->
+                    <div class="timeline-item mb-5">
+                        <div class="timeline-dot position-absolute bg-warning rounded-circle"></div>
+                        <div class="timeline-content bg-white rounded-3 shadow-sm p-4 ms-5">
+                            <div class="timeline-date badge bg-primary mb-3">Sep 2022 - Oct 2022</div>
+                            <h4 class="text-primary mb-2">Senior Software Developer</h4>
+                            <h5 class="text-warning mb-2">Tide</h5>
+                            <p class="text-muted small mb-3">
+                                <i class="fas fa-map-marker-alt me-2"></i>Hyderabad, India
+                            </p>
+                            <ul class="list-unstyled mb-3">
+                                <li class="mb-2">
+                                    <i class="fas fa-chevron-right text-warning me-2"></i>
+                                    Senior Backend Engineer in the Agent Experience Service team
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Gap Inc. -->
+                    <div class="timeline-item mb-5">
+                        <div class="timeline-dot position-absolute bg-warning rounded-circle"></div>
+                        <div class="timeline-content bg-white rounded-3 shadow-sm p-4 ms-5">
+                            <div class="timeline-date badge bg-primary mb-3">Mar 2021 - Sep 2022</div>
+                            <h4 class="text-primary mb-2">Senior Software Engineer</h4>
+                            <h5 class="text-warning mb-2">Gap Inc.</h5>
+                            <p class="text-muted small mb-3">
+                                <i class="fas fa-map-marker-alt me-2"></i>Hyderabad, India
+                            </p>
+                            <ul class="list-unstyled mb-3">
+                                <li class="mb-2">
+                                    <i class="fas fa-chevron-right text-warning me-2"></i>
+                                    Created and integrated 20+ microservices using Spring Boot
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-chevron-right text-warning me-2"></i>
+                                    Implemented Kafka & RabbitMQ for service communication
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-chevron-right text-warning me-2"></i>
+                                    Led story grooming and code reviews
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-chevron-right text-warning me-2"></i>
+                                    Integrated Azure blob storage for file management
+                                </li>
+                            </ul>
+                            <div class="tech-stack d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge bg-light text-primary border border-primary">Spring Boot</span>
+                                <span class="badge bg-light text-primary border border-primary">Microservices</span>
+                                <span class="badge bg-light text-primary border border-primary">Kafka</span>
+                                <span class="badge bg-light text-primary border border-primary">RabbitMQ</span>
+                                <span class="badge bg-light text-primary border border-primary">Azure</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Qualcomm -->
+                    <div class="timeline-item mb-5">
+                        <div class="timeline-dot position-absolute bg-warning rounded-circle"></div>
+                        <div class="timeline-content bg-white rounded-3 shadow-sm p-4 ms-5">
+                            <div class="timeline-date badge bg-primary mb-3">Jul 2017 - Mar 2021</div>
+                            <h4 class="text-primary mb-2">Programmer Analyst (Full Stack)</h4>
+                            <h5 class="text-warning mb-2">Qualcomm</h5>
+                            <p class="text-muted small mb-3">
+                                <i class="fas fa-map-marker-alt me-2"></i>Hyderabad, India
+                            </p>
+                            <ul class="list-unstyled mb-3">
+                                <li class="mb-2">
+                                    <i class="fas fa-chevron-right text-warning me-2"></i>
+                                    Developed key features including approval workflows
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-chevron-right text-warning me-2"></i>
+                                    Integrated third-party services like ServiceNow and SOLR
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-chevron-right text-warning me-2"></i>
+                                    Created AWS Lambda jobs for automated reporting
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-chevron-right text-warning me-2"></i>
+                                    Implemented Swagger for API documentation
+                                </li>
+                            </ul>
+                            <div class="tech-stack d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge bg-light text-primary border border-primary">Full Stack</span>
+                                <span class="badge bg-light text-primary border border-primary">ServiceNow</span>
+                                <span class="badge bg-light text-primary border border-primary">SOLR</span>
+                                <span class="badge bg-light text-primary border border-primary">AWS Lambda</span>
+                                <span class="badge bg-light text-primary border border-primary">Swagger</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TCS -->
+                    <div class="timeline-item mb-5">
+                        <div class="timeline-dot position-absolute bg-warning rounded-circle"></div>
+                        <div class="timeline-content bg-white rounded-3 shadow-sm p-4 ms-5">
+                            <div class="timeline-date badge bg-primary mb-3">Jun 2015 - Jul 2017</div>
+                            <h4 class="text-primary mb-2">System Engineer (Full Stack)</h4>
+                            <h5 class="text-warning mb-2">Tata Consultancy Services</h5>
+                            <p class="text-muted small mb-3">
+                                <i class="fas fa-map-marker-alt me-2"></i>Nagpur, India
+                            </p>
+                            <ul class="list-unstyled mb-3">
+                                <li class="mb-2">
+                                    <i class="fas fa-chevron-right text-warning me-2"></i>
+                                    Full stack developer for internal corporate projects
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-chevron-right text-warning me-2"></i>
+                                    Led a team of 7 during training period
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-chevron-right text-warning me-2"></i>
+                                    Received "ILP Kudos" award for outstanding performance
+                                </li>
+                            </ul>
+                            <div class="tech-stack d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge bg-light text-primary border border-primary">Full Stack</span>
+                                <span class="badge bg-light text-primary border border-primary">Team Leadership</span>
+                                <span class="badge bg-light text-primary border border-primary">Corporate Projects</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
 
-            <div class="text-content">
-                <h1 class="name animate-on-load">
-                    <span class="text-reveal">Shubham Jain</span>
-                </h1>
-                <div class="typing-container animate-on-load">
-                    <p class="tagline typing-text">Senior Software Developer | Java, Spring Boot, Azure &
-                        Microservices Expert</p>
-                </div>
-                <p class="summary animate-on-load">
-                    Senior Backend/Full Stack Developer with over <strong>10 years</strong> of experience
-                    specializing in dynamic enterprise web applications and RESTful APIs. Currently leading backend
-                    development for <strong>ABN Amro Bank</strong>, focusing on API development, cloud
-                    infrastructure, and microservices architecture.
-                </p>
-                <div class="social-links animate-on-load">
-                    <a aria-label="LinkedIn" class="social-icon linkedin" href="https://www.linkedin.com/in/jshubham"
-                       target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a aria-label="GitHub" class="social-icon github" href="https://github.com/jshubham1"
-                       target="_blank">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </a>
-                    <a aria-label="Email" class="social-icon email" href="mailto:jshubham@live.in">
-                        <i class="fas fa-envelope"></i>
-                        <span>Email</span>
-                    </a>
-                </div>
-                <div class="cta-buttons animate-on-load">
-                    <a class="btn btn-primary pulse-animation" href="#contact">Get In Touch</a>
-                    <a class="btn btn-secondary" href="#projects">View Projects</a>
-                </div>
+<!-- Projects Section -->
+<section class="py-5 bg-light" id="projects">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="display-4 fw-bold text-primary text-center mb-5">Featured Projects</h2>
             </div>
         </div>
-        </div>
-    </section>
 
-    <!-- PROJECTS SECTION -->
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card animate-on-scroll">
-                    <div class="project-image-container">
-                        <img alt="Banking API Project" class="project-image"
-                             src="https://picsum.photos/seed/banking/600/400">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" target="_blank" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a class="project-link" href="https://github.com/jshubham1" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
+        <div class="row" id="projects-grid">
+            <div class="col-12 text-center">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading projects...</span>
+                </div>
+                <p class="mt-3">Fetching latest projects from GitHub...</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="py-5" id="skills">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="display-4 fw-bold text-primary text-center mb-5">Technical Skills</h2>
+                <p class="text-center text-muted mb-5">Technologies and tools I work with to build scalable
+                    solutions</p>
+            </div>
+        </div>
+
+        <!-- Programming Languages -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h4 class="text-primary text-center mb-4">Programming Languages</h4>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://www.java.com/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fab fa-java fa-3x text-danger"></i>
                             </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Banking Payment APIs</h3>
-                        <p class="project-description">RESTful APIs for SEPA and International payments handling
-                            millions of transactions daily with high scalability and reliability.</p>
-                        <div class="project-tech">
-                            <span>Java 17</span>
-                            <span>Spring Boot 3</span>
-                            <span>Azure</span>
-                            <span>PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card animate-on-scroll">
-                    <div class="project-image-container">
-                        <img alt="Microservices Project" class="project-image"
-                             src="https://picsum.photos/seed/microservices/600/400">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" target="_blank" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a class="project-link" href="https://github.com/jshubham1" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
+                            <h6 class="fw-bold text-primary">Java 17</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-danger" style="width: 95%"></div>
                             </div>
+                            <small class="text-muted">Expert</small>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Sourcing Microservices</h3>
-                        <p class="project-description">Created and integrated 20+ microservices using Spring Boot with
-                            Kafka & RabbitMQ for asynchronous communication.</p>
-                        <div class="project-tech">
-                            <span>Spring Boot</span>
-                            <span>Kafka</span>
-                            <span>RabbitMQ</span>
-                            <span>Docker</span>
-                        </div>
-                    </div>
-                </div>
+                </a>
+            </div>
 
-                <div class="project-card animate-on-scroll">
-                    <div class="project-image-container">
-                        <img alt="Azure Migration Project" class="project-image"
-                             src="https://picsum.photos/seed/azure/600/400">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" target="_blank" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a class="project-link" href="https://github.com/jshubham1" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                   target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fab fa-js-square fa-3x text-warning"></i>
                             </div>
+                            <h6 class="fw-bold text-primary">JavaScript</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-warning" style="width: 80%"></div>
+                            </div>
+                            <small class="text-muted">Proficient</small>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Cloud Migration Platform</h3>
-                        <p class="project-description">Migrated legacy applications from IBM WebSphere to Azure Cloud,
-                            achieving 100% reduction in downtime.</p>
-                        <div class="project-tech">
-                            <span>Azure DevOps</span>
-                            <span>Azure App Service</span>
-                            <span>Key Vault</span>
-                            <span>CI/CD</span>
-                        </div>
-                    </div>
-                </div>
+                </a>
             </div>
-        </div>
-    </section>
 
-    <!-- EXPERIENCE SECTION WITH TIMELINE -->
-    <section id="experience" class="experience-section">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Professional Journey</h2>
-            <div class="timeline">
-                <!-- Current Position with fixed pulse-ring -->
-                <!-- TIMELINE ITEM WITH FIXED DOT POSITIONING -->
-                <div class="timeline-item animate-on-scroll current">
-                    <div class="timeline-dot">
-                        <div class="pulse-ring"></div>
-                    </div>
-                    <div class="timeline-date">Nov 2022 - Present</div>
-                    <div class="timeline-content">
-                        <div class="experience-header">
-                            <h3>Senior Backend Engineer</h3>
-                            <p class="company">ABN AMRO Bank N.V.</p>
-                            <span class="location">Amsterdam, Netherlands</span>
-                        </div>
-                        <ul class="responsibilities">
-                            <li>Leading backend development for Payments team handling millions of daily transactions
-                            </li>
-                            <li>Developed RESTful APIs using Java 17 and Spring Boot 3</li>
-                            <li>Migrated legacy applications from IBM WebSphere to Azure Cloud</li>
-                            <li>Achieved 85% test coverage and 100% reduction in downtime</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span>Java 17</span>
-                            <span>Spring Boot 3</span>
-                            <span>Azure</span>
-                            <span>DevOps</span>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://www.w3schools.com/sql/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fas fa-database fa-3x text-info"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">SQL</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-info" style="width: 85%"></div>
+                            </div>
+                            <small class="text-muted">Advanced</small>
                         </div>
                     </div>
-                </div>
-
-                <!-- Previous Positions -->
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Sep 2022 - Oct 2022</div>
-                    <div class="timeline-content">
-                        <div class="experience-header">
-                            <h3>Senior Software Developer</h3>
-                            <p class="company">Tide</p>
-                            <span class="location">Hyderabad, India</span>
-                        </div>
-                        <p>Senior Backend Engineer in the Agent Experience Service team.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Mar 2021 - Sep 2022</div>
-                    <div class="timeline-content">
-                        <div class="experience-header">
-                            <h3>Senior Software Engineer</h3>
-                            <p class="company">Gap Inc.</p>
-                            <span class="location">Hyderabad, India</span>
-                        </div>
-                        <ul class="responsibilities">
-                            <li>Created and integrated 20+ microservices using Spring Boot</li>
-                            <li>Implemented Kafka & RabbitMQ for service communication</li>
-                            <li>Led story grooming and code reviews</li>
-                            <li>Integrated Azure blob storage for file management</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Jul 2017 - Mar 2021</div>
-                    <div class="timeline-content">
-                        <div class="experience-header">
-                            <h3>Programmer Analyst (Full Stack)</h3>
-                            <p class="company">Qualcomm</p>
-                            <span class="location">Hyderabad, India</span>
-                        </div>
-                        <ul class="responsibilities">
-                            <li>Developed key features including approval workflows</li>
-                            <li>Integrated third-party services like ServiceNow and SOLR</li>
-                            <li>Created AWS Lambda jobs for automated reporting</li>
-                            <li>Implemented Swagger for API documentation</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Jun 2015 - Jul 2017</div>
-                    <div class="timeline-content">
-                        <div class="experience-header">
-                            <h3>System Engineer (Full Stack)</h3>
-                            <p class="company">Tata Consultancy Services</p>
-                            <span class="location">Nagpur, India</span>
-                        </div>
-                        <p>Full stack developer for internal corporate projects. Led a team of 7 during training period
-                            and received "ILP Kudos" award.</p>
-                    </div>
-                </div>
+                </a>
             </div>
-        </div>
-    </section>
 
-    <!-- SKILLS SECTION -->
-    <section id="skills" class="skills-section">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Core Technologies</h2>
-            <div class="skills-grid">
-                <a href="https://www.oracle.com/java/" target="_blank" class="skill-card animate-on-scroll">
-                    <div class="skill-icon">
-                        <img src="https://www.vectorlogo.zone/logos/java/java-icon.svg" alt="Java">
-                    </div>
-                    <span>Java</span>
-                    <div class="skill-level">
-                        <div class="skill-bar" data-level="95"></div>
-                    </div>
-                </a>
-
-                <a href="https://spring.io/projects/spring-boot" target="_blank" class="skill-card animate-on-scroll">
-                    <div class="skill-icon">
-                        <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="Spring Boot">
-                    </div>
-                    <span>Spring Boot</span>
-                    <div class="skill-level">
-                        <div class="skill-bar" data-level="90"></div>
-                    </div>
-                </a>
-
-                <a href="https://azure.microsoft.com/" target="_blank" class="skill-card animate-on-scroll">
-                    <div class="skill-icon">
-                        <img alt="Azure"
-                             src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg">
-                    </div>
-                    <span>Azure</span>
-                    <div class="skill-level">
-                        <div class="skill-bar" data-level="85"></div>
-                    </div>
-                </a>
-
-                <a href="https://kubernetes.io/" target="_blank" class="skill-card animate-on-scroll">
-                    <div class="skill-icon">
-                        <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="Microservices">
-                    </div>
-                    <span>Microservices</span>
-                    <div class="skill-level">
-                        <div class="skill-bar" data-level="88"></div>
-                    </div>
-                </a>
-
-                <a href="https://www.postgresql.org/" target="_blank" class="skill-card animate-on-scroll">
-                    <div class="skill-icon">
-                        <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg" alt="PostgreSQL">
-                    </div>
-                    <span>PostgreSQL</span>
-                    <div class="skill-level">
-                        <div class="skill-bar" data-level="80"></div>
-                    </div>
-                </a>
-
-                <a href="https://www.mongodb.com/" target="_blank" class="skill-card animate-on-scroll">
-                    <div class="skill-icon">
-                        <img src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg" alt="MongoDB">
-                    </div>
-                    <span>MongoDB</span>
-                    <div class="skill-level">
-                        <div class="skill-bar" data-level="75"></div>
-                    </div>
-                </a>
-
-                <a href="https://kafka.apache.org/" target="_blank" class="skill-card animate-on-scroll">
-                    <div class="skill-icon">
-                        <img src="https://www.vectorlogo.zone/logos/apache_kafka/apache_kafka-icon.svg" alt="Kafka">
-                    </div>
-                    <span>Apache Kafka</span>
-                    <div class="skill-level">
-                        <div class="skill-bar" data-level="82"></div>
-                    </div>
-                </a>
-
-                <a href="https://www.rabbitmq.com/" target="_blank" class="skill-card animate-on-scroll">
-                    <div class="skill-icon">
-                        <img src="https://www.vectorlogo.zone/logos/rabbitmq/rabbitmq-icon.svg" alt="RabbitMQ">
-                    </div>
-                    <span>RabbitMQ</span>
-                    <div class="skill-level">
-                        <div class="skill-bar" data-level="78"></div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://www.w3schools.com/html/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fab fa-html5 fa-3x text-danger"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">HTML5/CSS3</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-danger" style="width: 75%"></div>
+                            </div>
+                            <small class="text-muted">Intermediate</small>
+                        </div>
                     </div>
                 </a>
             </div>
         </div>
-    </section>
 
-    <!-- Recommendations Section -->
-    <section class="py-5" id="recommendations">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5">
-                    <h2 class="section-title">What People Say</h2>
-                    <p class="section-subtitle">Professional recommendations from colleagues and managers</p>
-                </div>
+        <!-- Frameworks & Libraries -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h4 class="text-primary text-center mb-4">Frameworks & Libraries</h4>
             </div>
 
-            <div class="recommendations-slider">
-                <div class="slider-container">
-                    <div class="slider-track" id="sliderTrack">
-                        <!-- Recommendation cards will be dynamically inserted here -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://spring.io/projects/spring-boot"
+                   target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fas fa-leaf fa-3x text-success"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">Spring Boot 3</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-success" style="width: 92%"></div>
+                            </div>
+                            <small class="text-muted">Expert</small>
+                        </div>
                     </div>
-                </div>
-                <div class="slider-controls">
-                    <button class="slider-btn prev-btn" onclick="moveSlider('prev')">
-                        <i class="fas fa-chevron-left"></i>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://angular.io/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fab fa-angular fa-3x text-danger"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">Angular 8</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-danger" style="width: 75%"></div>
+                            </div>
+                            <small class="text-muted">Intermediate</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://hibernate.org/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fas fa-layer-group fa-3x text-warning"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">Hibernate</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-warning" style="width: 85%"></div>
+                            </div>
+                            <small class="text-muted">Advanced</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://getbootstrap.com/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fab fa-bootstrap fa-3x text-primary"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">Bootstrap</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-primary" style="width: 80%"></div>
+                            </div>
+                            <small class="text-muted">Proficient</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Cloud & DevOps -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h4 class="text-primary text-center mb-4">Cloud & DevOps</h4>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://azure.microsoft.com/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fab fa-microsoft fa-3x text-info"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">Microsoft Azure</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-info" style="width: 88%"></div>
+                            </div>
+                            <small class="text-muted">Advanced</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://aws.amazon.com/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fab fa-aws fa-3x text-warning"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">AWS Lambda</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-warning" style="width: 75%"></div>
+                            </div>
+                            <small class="text-muted">Intermediate</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://azure.microsoft.com/en-us/services/devops/"
+                   target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fas fa-code-branch fa-3x text-primary"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">Azure DevOps</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-primary" style="width: 85%"></div>
+                            </div>
+                            <small class="text-muted">Advanced</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://git-scm.com/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fab fa-git-alt fa-3x text-danger"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">Git/SVN</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-danger" style="width: 90%"></div>
+                            </div>
+                            <small class="text-muted">Expert</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Architecture & Design Patterns -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h4 class="text-primary text-center mb-4">Architecture & Design Patterns</h4>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://microservices.io/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fas fa-cubes fa-3x text-warning"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">Microservices</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-warning" style="width: 90%"></div>
+                            </div>
+                            <small class="text-muted">Expert</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://restfulapi.net/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fas fa-exchange-alt fa-3x text-success"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">RESTful APIs</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-success" style="width: 95%"></div>
+                            </div>
+                            <small class="text-muted">Expert</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://www.sonarqube.org/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fas fa-search fa-3x text-info"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">SonarQube</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-info" style="width: 80%"></div>
+                            </div>
+                            <small class="text-muted">Proficient</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://swagger.io/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fas fa-file-code fa-3x text-success"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">Swagger/OpenAPI</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-success" style="width: 85%"></div>
+                            </div>
+                            <small class="text-muted">Advanced</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Databases & Messaging -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h4 class="text-primary text-center mb-4">Databases & Messaging</h4>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://www.postgresql.org/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fas fa-elephant fa-3x text-primary"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">PostgreSQL</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-primary" style="width: 85%"></div>
+                            </div>
+                            <small class="text-muted">Advanced</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://www.oracle.com/database/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fas fa-database fa-3x text-danger"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">Oracle DB</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-danger" style="width: 80%"></div>
+                            </div>
+                            <small class="text-muted">Proficient</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://www.mongodb.com/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fas fa-leaf fa-3x text-success"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">MongoDB</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-success" style="width: 75%"></div>
+                            </div>
+                            <small class="text-muted">Intermediate</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://kafka.apache.org/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fas fa-stream fa-3x text-warning"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">Apache Kafka</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-warning" style="width: 82%"></div>
+                            </div>
+                            <small class="text-muted">Advanced</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Testing & Tools -->
+        <div class="row">
+            <div class="col-12">
+                <h4 class="text-primary text-center mb-4">Testing & Development Tools</h4>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://junit.org/junit5/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fas fa-check-circle fa-3x text-success"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">JUnit 5</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-success" style="width: 90%"></div>
+                            </div>
+                            <small class="text-muted">Expert</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://site.mockito.org/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fas fa-flask fa-3x text-info"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">Mockito</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-info" style="width: 85%"></div>
+                            </div>
+                            <small class="text-muted">Advanced</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://cucumber.io/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fas fa-seedling fa-3x text-success"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">Cucumber BDD</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-success" style="width: 80%"></div>
+                            </div>
+                            <small class="text-muted">Proficient</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="skill-link text-decoration-none" href="https://maven.apache.org/" target="_blank">
+                    <div class="skill-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="skill-icon mb-3">
+                                <i class="fas fa-tools fa-3x text-warning"></i>
+                            </div>
+                            <h6 class="fw-bold text-primary">Maven</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-warning" style="width: 85%"></div>
+                            </div>
+                            <small class="text-muted">Advanced</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recommendations Section -->
+<section class="py-5 position-relative overflow-hidden" id="recommendations">
+    <div class="container position-relative">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="display-4 fw-bold text-white text-center mb-3">Recommendations</h2>
+                <p class="text-center text-white-75 mb-5">What colleagues and managers say about working with me</p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="carousel slide" data-bs-interval="8000" data-bs-ride="carousel"
+                     id="recommendationsCarousel">
+                    <div class="carousel-inner" id="recommendations-container">
+                        <!-- Recommendations will be loaded by JavaScript -->
+                    </div>
+
+                    <!-- Carousel indicators -->
+                    <div class="carousel-indicators">
+                        <button class="active" data-bs-slide-to="0" data-bs-target="#recommendationsCarousel"
+                                type="button"></button>
+                        <button data-bs-slide-to="1" data-bs-target="#recommendationsCarousel" type="button"></button>
+                        <button data-bs-slide-to="2" data-bs-target="#recommendationsCarousel" type="button"></button>
+                        <button data-bs-slide-to="3" data-bs-target="#recommendationsCarousel" type="button"></button>
+                        <button data-bs-slide-to="4" data-bs-target="#recommendationsCarousel" type="button"></button>
+                        <button data-bs-slide-to="5" data-bs-target="#recommendationsCarousel" type="button"></button>
+                    </div>
+
+                    <!-- Carousel controls -->
+                    <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#recommendationsCarousel"
+                            type="button">
+                        <span class="carousel-control-prev-icon"></span>
+                        <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="slider-btn next-btn" onclick="moveSlider('next')">
-                        <i class="fas fa-chevron-right"></i>
+                    <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#recommendationsCarousel"
+                            type="button">
+                        <span class="carousel-control-next-icon"></span>
+                        <span class="visually-hidden">Next</span>
                     </button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- CONTACT SECTION -->
-    <footer id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info animate-on-scroll">
-                    <h3>Let's Work Together</h3>
-                    <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of an
-                        ambitious vision. Feel free to reach out if you'd like to connect!</p>
+<!-- Contact Section -->
+<section class="py-5 bg-dark text-white" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="display-4 fw-bold text-warning text-center mb-5">Get In Touch</h2>
+            </div>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="contact-info">
+                    <h3 class="text-warning mb-4">Let's Connect</h3>
+                    <p class="lead mb-4">
+                        Ready to discuss your next project or explore collaboration opportunities?
+                        I'm always open to interesting conversations about technology and innovation.
+                    </p>
 
                     <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
+                        <div class="d-flex align-items-center mb-3 p-3 bg-white bg-opacity-10 rounded">
+                            <i class="fas fa-envelope text-warning me-3"></i>
                             <span>jshubham@live.in</span>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Almere, Netherlands</span>
+                        <div class="d-flex align-items-center mb-3 p-3 bg-white bg-opacity-10 rounded">
+                            <i class="fab fa-linkedin text-warning me-3"></i>
+                            <span>linkedin.com/in/jshubham</span>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-briefcase"></i>
-                            <span>Senior Backend Engineer</span>
+                        <div class="d-flex align-items-center mb-3 p-3 bg-white bg-opacity-10 rounded">
+                            <i class="fas fa-map-marker-alt text-warning me-3"></i>
+                            <span>Amsterdam, Netherlands</span>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="contact-form-container animate-on-scroll">
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" required>
-                            <label for="name">Your Name</label>
+            <div class="col-lg-6">
+                <div class="contact-form-container bg-white bg-opacity-10 p-4 rounded-3">
+                    <form class="contact-form">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input class="form-control bg-white bg-opacity-10 border-white text-white"
+                                           id="firstName"
+                                           placeholder="First Name" required type="text">
+                                    <label class="text-white-75" for="firstName">First Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input class="form-control bg-white bg-opacity-10 border-white text-white"
+                                           id="lastName"
+                                           placeholder="Last Name" required type="text">
+                                    <label class="text-white-75" for="lastName">Last Name</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input class="form-control bg-white bg-opacity-10 border-white text-white"
+                                           id="email"
+                                           placeholder="Email" required type="email">
+                                    <label class="text-white-75" for="email">Email Address</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                        <textarea class="form-control bg-white bg-opacity-10 border-white text-white"
+                                                  id="message" placeholder="Message" required
+                                                  style="height: 120px"></textarea>
+                                    <label class="text-white-75" for="message">Your Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-warning btn-lg rounded-pill px-4 w-100" type="submit">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </div>
                         </div>
-
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" required>
-                            <label for="email">Your Email</label>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" required>
-                            <label for="subject">Subject</label>
-                        </div>
-
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                            <label for="message">Your Message</label>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary submit-btn">
-                            <span>Send Message</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
                     </form>
                 </div>
             </div>
-
-            <div class="email-popup" id="emailPopup">
-                <div class="popup-content">
-                    <div class="popup-header">
-                        <h3>Send me an email</h3>
-                        <button class="close-popup" id="closePopup">&times;</button>
-                    </div>
-                    <div class="popup-body">
-                        <p><strong>To:</strong> jshubham@live.in</p>
-                        <p><strong>Subject:</strong> Collaboration Opportunity</p>
-                        <p><strong>Message:</strong></p>
-                        <textarea readonly>Hi Shubham,
-
-I came across your portfolio and I'm impressed with your experience in Java, Spring Boot, and Azure technologies. I'd like to discuss a potential collaboration opportunity.
-
-Looking forward to hearing from you!
-
-Best regards,</textarea>
-                        <div class="popup-actions">
-                            <a class="btn btn-primary"
-                               href="mailto:jshubham@live.in?subject=Collaboration%20Opportunity&body=Hi%20Shubham%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20I%27m%20impressed%20with%20your%20experience%20in%20Java%2C%20Spring%20Boot%2C%20and%20Azure%20technologies.%20I%27d%20like%20to%20discuss%20a%20potential%20collaboration%20opportunity.%0D%0A%0D%0ALooking%20forward%20to%20hearing%20from%20you%21%0D%0A%0D%0ABest%20regards%2C">Open
-                                Email Client</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-    </footer>
-</main>
+    </div>
+</section>
 
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
 <script src="script.js"></script>
 </body>
 </html>
