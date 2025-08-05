@@ -786,9 +786,18 @@ background-shapes {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
+    .profile-container {
+        margin-top: 50px; /* Add bottom margin */
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .profile-image {
         width: 160px;
         height: 160px;
+        margin: 0 auto 20px auto; /* Center and add margin */
     }
 
     .profile-ring {
@@ -863,9 +872,33 @@ background-shapes {
         margin-bottom: 15px;
         margin-right: 0 !important;
     }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 0 20px; /* Add horizontal padding */
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 200px; /* Prevent buttons from being too wide */
+        padding: 15px 20px;
+        margin-bottom: 15px;
+        font-size: 1rem;
+        white-space: nowrap; /* Prevent text wrapping */
+    }
 }
 
 @media (max-width: 480px) {
+
+    .profile-container {
+        margin-top: 50px; /* Add bottom margin */
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .profile-image {
         width: 140px;
         height: 140px;
@@ -880,9 +913,14 @@ background-shapes {
         font-size: 2rem;
     }
 
+    .cta-buttons {
+        padding: 0 15px;
+    }
+
     .cta-buttons .btn {
-        width: 100%;
-        margin-bottom: 10px;
+        max-width: 200px;
+        padding: 14px 18px;
+        font-size: 0.95rem;
     }
 
     .timeline::before {
