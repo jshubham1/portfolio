@@ -13,27 +13,32 @@ A modern, responsive portfolio website showcasing 10+ years of experience in Jav
 ## ✨ Features
 
 ### 🎨 Modern Design
+
 - **Gradient backgrounds** with animated floating elements
 - **Glass-morphism effects** for modern UI aesthetics
 - **Smooth animations** and micro-interactions
 - **Professional color scheme** (Navy Blue, Cyan, Orange)
-- **Typography hierarchy** using Roboto & Poppins fonts
+- **Typography hierarchy** using Roboto \& Poppins fonts
 
 ### 📱 Fully Responsive
+
 - **Mobile-first approach** for optimal performance
 - **Responsive grid layouts** that adapt to all screen sizes
 - **Touch-friendly navigation** for mobile devices
 - **Optimized images** and assets for fast loading
 - **Cross-browser compatibility** (Chrome, Firefox, Safari, Edge)
 
+
 ### 🚀 Performance Optimized
+
 - **Lightweight codebase** with minimal dependencies
-- **CSS Grid & Flexbox** for efficient layouts
+- **CSS Grid \& Flexbox** for efficient layouts
 - **Optimized animations** using CSS transforms
 - **Lazy loading** for images and content
 - **SEO optimized** with proper meta tags
 
 ### 💼 Professional Sections
+
 - **Hero Section** with animated profile and typing effects
 - **Featured Projects** with live demo links and tech stacks
 - **Professional Experience** with detailed timeline
@@ -42,23 +47,25 @@ A modern, responsive portfolio website showcasing 10+ years of experience in Jav
 
 ## 🛠️ Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| **HTML5** | Semantic structure and accessibility |
-| **CSS3** | Modern styling with Grid, Flexbox, and animations |
-| **JavaScript (ES6+)** | Interactive functionality and animations |
-| **Font Awesome 6** | Professional icons throughout the site |
-| **Google Fonts** | Custom typography (Roboto & Poppins) |
-| **GitHub Pages** | Free hosting and deployment |
+| Technology            | Purpose                                           |
+|:----------------------|:--------------------------------------------------|
+| **HTML5**             | Semantic structure and accessibility              |
+| **CSS3**              | Modern styling with Grid, Flexbox, and animations |
+| **JavaScript (ES6+)** | Interactive functionality and animations          |
+| **Font Awesome 6**    | Professional icons throughout the site            |
+| **Google Fonts**      | Custom typography (Roboto \& Poppins)             |
+| **GitHub Pages**      | Free hosting and deployment                       |
 
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - A modern web browser
 - Git installed on your machine
 - GitHub account for deployment
 
 ### 1. Clone the Repository
+
 ```
 
 git clone https://github.com/jshubham1/portfolio.git
@@ -67,6 +74,7 @@ cd portfolio
 ```
 
 ### 2. Local Development
+
 ```
 
 
@@ -87,6 +95,7 @@ open index.html
 ```
 
 ### 3. Customize Your Content
+
 1. **Update Personal Information**
 ```
 
@@ -114,11 +123,13 @@ open index.html
 ```
 
 4. **Customize Projects**
+
 - Update project titles, descriptions, and images
 - Add your actual project links and repositories
 - Modify technology stacks for each project
 
 5. **Update Experience Timeline**
+
 - Add your work experience details
 - Update company names, positions, and achievements
 - Modify dates and locations
@@ -126,6 +137,7 @@ open index.html
 ### 4. Deploy to GitHub Pages
 
 #### Method 1: Direct Upload
+
 1. Create a new repository on GitHub
 2. Upload your files or push your code
 3. Go to Settings → Pages
@@ -133,6 +145,7 @@ open index.html
 5. Your site will be live at `https://jshubham1.github.io/repository-name/`
 
 #### Method 2: GitHub Desktop
+
 1. Open GitHub Desktop
 2. Clone your repository
 3. Make changes locally
@@ -142,7 +155,9 @@ open index.html
 ## 🎨 Customization Guide
 
 ### Color Scheme
+
 Update the CSS custom properties in `styles.css`:
+
 ```
 
 :root {
@@ -155,7 +170,9 @@ Update the CSS custom properties in `styles.css`:
 ```
 
 ### Animations
+
 All animations are CSS-based and can be customized:
+
 ```
 
 .animate-on-scroll {
@@ -167,7 +184,9 @@ transition: all 0.8s ease-out;
 ```
 
 ### Typography
+
 Font families can be changed by updating the Google Fonts import:
+
 ```
 
 <link href="https://fonts.googleapis.com/css2?family=YourFont:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -195,35 +214,38 @@ portfolio/
 ## 🌐 Browser Support
 
 | Browser | Version |
-|---------|---------|
-| Chrome | 90+ |
-| Firefox | 88+ |
-| Safari | 14+ |
-| Edge | 90+ |
+|:--------|:--------|
+| Chrome  | 90+     |
+| Firefox | 88+     |
+| Safari  | 14+     |
+| Edge    | 90+     |
 
 ## 📱 Responsive Breakpoints
 
-| Device | Breakpoint | Layout Changes |
-|--------|------------|----------------|
-| **Desktop** | 1200px+ | Full 2-column layout |
-| **Laptop** | 1024px+ | Adjusted spacing |
-| **Tablet** | 768px+ | Stacked hero section |
-| **Mobile** | 480px+ | Single column, hamburger menu |
-| **Small Mobile** | 320px+ | Optimized for small screens |
+| Device           | Breakpoint | Layout Changes                |
+|:-----------------|:-----------|:------------------------------|
+| **Desktop**      | 1200px+    | Full 2-column layout          |
+| **Laptop**       | 1024px+    | Adjusted spacing              |
+| **Tablet**       | 768px+     | Stacked hero section          |
+| **Mobile**       | 480px+     | Single column, hamburger menu |
+| **Small Mobile** | 320px+     | Optimized for small screens   |
 
 ## ⚡ Performance Tips
 
 ### Image Optimization
+
 - Use WebP format for better compression
 - Implement lazy loading for images below the fold
 - Optimize images to appropriate sizes (profile: 400x400px)
 
 ### CSS Optimization
+
 - Minimize unused CSS rules
 - Use CSS custom properties for consistent theming
 - Leverage CSS Grid and Flexbox for efficient layouts
 
 ### JavaScript Optimization
+
 - Use modern ES6+ features
 - Implement intersection observer for scroll animations
 - Minimize DOM manipulations
@@ -268,11 +290,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 [![Deploy to GitHub Pages](https://github.com/jshubham1/portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/jshubham1/portfolio/actions/workflows/deploy.yml)
 
 ### Live Demo
+
 🌐 **[View Live Portfolio](https://jshubham1.github.io/portfolio/)**
 
 ---
 
 *Built with ❤️ using modern web technologies*
+
 ```
 
 
@@ -281,6 +305,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ###LICENSE File** (MIT License)
 
 ```
+
 MIT License
 
 Copyright (c) 2025 Shubham Jain
@@ -302,4 +327,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-```
